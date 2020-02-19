@@ -5,10 +5,11 @@ hosts=(
 )
 
 keep="/data/avalanche/hosts"
+remote="/opt/avalanche/keep/"
 
 while ssleep 10; do
   for host in "${hosts[@]}"; do
-    src="$host:/opt/avalanche/keep/"
+    src="$host:$remote"
     dst="$keep/$host/"
     mkdir -p "$dst"
     rsync -a --remove-source-files "$src" "$dst"
