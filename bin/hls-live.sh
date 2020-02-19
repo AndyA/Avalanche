@@ -8,9 +8,10 @@ out="www/hls"
 fps=25
 seg=2
 mbits=3
+list_size=120
 
 index="$out/index.m3u8"
-segment="$out/seg-%Y%m%d-%H%M%S.ts"
+segment="$out/seg-%d.ts"
 
 rm -rf "$out"
 mkdir -p "$out"
@@ -26,13 +27,11 @@ raspivid -o -                          \
     -c copy                            \
     -f hls                             \
     -hls_time $seg                     \
-    -hls_list_size 60                  \
+    -hls_list_size $list_size          \
     -hls_delete_threshold 1            \
     -hls_flags delete_segments         \
     -hls_start_number_source datetime  \
     -hls_allow_cache 1                 \
-    -hls_playlist_type event           \
-    -strftime 1                        \
     -hls_segment_filename "$segment"   \
     -start_number 10                   \
     -y "$index"
