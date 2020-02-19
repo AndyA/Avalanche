@@ -2,7 +2,7 @@
 
 set -x
 
-out="hls"
+out="www/hls"
 mkdir -p "$out"
 
 raspivid -o -                        \
