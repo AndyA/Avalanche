@@ -1,6 +1,7 @@
+.*.sw?
 .AppleDouble/
 .DS_Store
 .afpDeleted*
-.*.sw?
 /Session.vim
+/keep/
 /node_modules/
