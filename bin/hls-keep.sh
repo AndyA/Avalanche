@@ -4,7 +4,7 @@ src="www/hls"
 dst="keep"
 
 last=""
-while sleep 1; do
+while sleep 5; do
   while read file; do
     if [[ $file > $last ]]; then
       echo "$file"
