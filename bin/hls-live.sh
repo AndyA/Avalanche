@@ -11,10 +11,10 @@ mbits=3
 list_size=120
 
 index="$out/index.m3u8"
-segment="$out/seg-%d.ts"
+segment="$out/seg-$(date '+%Y%m%d%H%M%S')-%d.ts"
 
-rm -rf "$out"
 mkdir -p "$out"
+find "$out" -mmin +1 -print0 | xargs -0 rm -f
 
 raspivid -o -                          \
   -w 1920 -h 1080                      \
