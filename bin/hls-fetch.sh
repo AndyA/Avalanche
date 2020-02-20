@@ -2,6 +2,7 @@
 
 hosts=(
   avalanche1.pike
+  avalanche2.pike
 )
 
 keep="/data/avalanche/hosts"
