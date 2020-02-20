@@ -14,7 +14,7 @@ index="$out/index.m3u8"
 segment="$out/seg-$(date '+%Y%m%d%H%M%S')-%d.ts"
 
 mkdir -p "$out"
-find "$out" -mmin +1 -print0 | xargs -0 rm -f
+find "$out" -mmin +1 -print0 | xargs -0 rm -rf
 
 raspivid -o -                          \
   -w 1920 -h 1080                      \
